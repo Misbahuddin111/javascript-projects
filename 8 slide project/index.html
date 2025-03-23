@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Basic JavaScript Slideshow</title>
+</head>
+
+<body>
+	<div>
+    	<img src="image1.jpg" alt="slideshow image" id="myimage">
+    </div>
+    
+    <p><a href="#" id="previous">previous</a> --- <a href="#" id="next">next</a></p>
+</body>
+<script>
+    let images = ["image1.jpg", "image2.jpg", "image3.jpg",  "image4.jpg", "image5.jpg"];
+    let currentImage = 0;
+    function nextImage(){
+        currentImage++;
+        if(currentImage>images.length-1){currentImage = 0 };
+        document.getElementById("myimage").src =images[currentImage];
+    }
+
+    function previousImage(){
+           currentImage--;
+        if(currentImage<0){currentImage= images.length-1 };
+        document.getElementById("myimage").src =images[currentImage];
+
+    }
+    document.getElementById("next").addEventListener("click", nextImage);
+    document.getElementById("previous").addEventListener("click", previousImage);
+
+</script>
+</html>
+       

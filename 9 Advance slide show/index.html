@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Slide Show with Cross Fade</title>
+
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="content">
+        <img src="slides/image1.jpg" alt="slideshow image" id="myimage">
+    </div>
+
+    <p id="links"><a href="#" id="previous">previous</a><a href="#" id="next">next</a></p>
+
+</body>
+
+
+<script>
+    let images = ["slides/image1.jpg", "slides/image2.jpg", "slides/image3.jpg", "slides/image4.jpg", "slides/image5.jpg",];
+    let container = document.getElementById("content");
+    let previous = document.getElementById("previous");
+    let next = document.getElementById("next");
+    
+    
+    let currentImage = 0;
+    function nextImage(){
+        currentImage++;
+        if(currentImage>images.length-1){currentImage = 0 };
+        document.getElementById("myimage").src =images[currentImage];
+    }
+
+    function previousImage(){
+           currentImage--;
+        if(currentImage<0){currentImage= images.length-1 };
+        document.getElementById("myimage").src =images[currentImage];
+
+    }
+    document.getElementById("next").addEventListener("click", nextImage);
+    document.getElementById("previous").addEventListener("click", previousImage);
+
+
+</script>
+
+</html>
