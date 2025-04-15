@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            background: linear-gradient(to top, black, rgb(212, 212, 57)) ;
+            background-repeat: no-repeat;
+           background-size: cover;
+           height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding-top: 10rem;
+        }
+
+        #count {
+            font-size: 4rem;
+        }
+
+        #decreasebtn {
+            font-size: 1.3rem;
+            background-color: aqua;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        #resetbtn {
+            font-size: 1.3rem;
+            background-color: aqua;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        #increasebtn {
+            font-size: 1.3rem;
+            background-color: aqua;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        .btn{
+          
+           margin-top: 3rem;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="count">0</div>
+        <div class="btn">
+            <button id="decreasebtn">Decrease</button>
+            <button id="resetbtn">Reset</button>
+            <button id="increasebtn">Increase</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let countDisplay= document.getElementById("count");
+    let decreaseBtn=document.getElementById("decreasebtn");
+    let resetBtn= document.getElementById("resetbtn");
+    let increaseBtn= document.getElementById("increasebtn");
+     
+     let count =1;
+      function updateDisplay(){
+        countDisplay.textContent =count;
+      };
+
+      decreaseBtn.addEventListener("click", ()=>{
+         count--;
+         updateDisplay();
+
+      });
+      resetBtn.addEventListener("click", ()=>{
+        count=0;
+        updateDisplay();
+
+
+      })
+    
+      increaseBtn.addEventListener("click",()=>{
+        count++;
+        updateDisplay();
+      })
+    
+</script>
+</html>
